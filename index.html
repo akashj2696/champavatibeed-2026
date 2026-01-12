@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>चंपावती मोहोत्सव बीड 2026 - स्पर्धा नोंदणी</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* {margin:0;padding:0;box-sizing:border-box}
+body {
+font-family: 'Noto Sans Devanagari', sans-serif;
+background: linear-gradient(135deg, #2c3e50 0%, #34495e 50%, #4a6741 100%);
+min-height: 100vh;
+}
+.container {
+max-width: 900px;
+margin: auto;
+padding: 20px;
+}
+.header {
+position: relative;
+height: 300px;
+border-radius: 25px;
+margin-bottom: 40px;
+overflow: hidden;
+box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+border: 2px solid rgba(255,255,255,0.1);
+}
+.header-image {
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+}
+.form-box {
+background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+padding: 50px;
+border-radius: 25px;
+box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+border: 2px solid rgba(255,255,255,0.1);
+position: relative;
+overflow: hidden;
+}
+.form-box::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background: rgba(255,255,255,0.05);
+backdrop-filter: blur(10px);
+z-index: 0;
+}
+.form-box > * {
+position: relative;
+z-index: 1;
+}
+h1 {
+text-align: center;
+margin-bottom: 40px;
+font-size: 2em;
+color: #ecf0f1;
+font-weight: 700;
+text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+.form-group {margin-bottom: 28px;}
+label {
+display: block;
+font-weight: 600;
+margin-bottom: 10px;
+color: #bdc3c7;
+font-size: 1.05em;
+}
+input, select {
+width: 100%;
+padding: 16px 18px;
+border-radius: 12px;
+border: 2px solid rgba(255,255,255,0.2);
+font-size: 16px;
+font-family: inherit;
+background: rgba(52,73,94,0.9) !important;
+color: #ecf0f1;
+backdrop-filter: blur(10px);
+transition: all 0.3s ease;
+box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+}
+select {
+background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23bdc3c7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+background-repeat: no-repeat;
+background-position: right 15px center;
+background-size: 20px;
+padding-right: 50px;
+}
+select option {
+background: #34495e !important;
+color: #ecf0f1 !important;
+padding: 10px;
+}
+input::placeholder, select::placeholder {
+color: rgba(236,240,241,0.6);
+}
+input:focus, select:focus {
+outline: none;
+border-color: #3498db;
+box-shadow: 0 0 0 3px rgba(52,152,219,0.3), 0 8px 30px rgba(52,152,219,0.2);
+background: rgba(52,73,94,1) !important;
+transform: translateY(-2px);
+}
+.required {color: #e74c3c;}
+button {
+width: 100%;
+padding: 18px;
+font-size: 1.2em;
+font-weight: 600;
+background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+color: #fff;
+border: none;
+border-radius: 15px;
+cursor: pointer;
+transition: all 0.3s ease;
+box-shadow: 0 10px 30px rgba(46,204,113,0.4);
+position: relative;
+overflow: hidden;
+}
+button:hover {
+transform: translateY(-3px);
+box-shadow: 0 20px 40px rgba(46,204,113,0.5);
+}
+button:active {transform: translateY(-1px);}
+.conditional {display: none;}
+.show {display: block;}
+.note {
+font-size: 14px;
+background: linear-gradient(135deg, rgba(236,240,241,0.2), rgba(189,195,199,0.2));
+padding: 12px 16px;
+border-radius: 12px;
+border-left: 4px solid #3498db;
+margin-top: 8px;
+box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+color: #ecf0f1;
+backdrop-filter: blur(10px);
+}
+@keyframes fadeInUp {
+from {opacity: 0; transform: translateY(25px);}
+to {opacity: 1; transform: translateY(0);}
+}
+.form-group {animation: fadeInUp 0.6s ease forwards;}
+@media (max-width: 768px) {
+.container {padding: 15px;}
+.header {height: 250px; margin-bottom: 25px;}
+.form-box {padding: 35px;}
+h1 {font-size: 1.6em;}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<img src="https://i.postimg.cc/PxPBCd0n/Screenshot-2026-01-11-125417.png" alt="चंपावती मोहोत्सव 2026" class="header-image">
+</div>
+<div class="form-box">
+<h1>स्पर्धा नोंदणी फॉर्म</h1>
+<form id="registrationForm">
+<div class="form-group">
+<label>शाळेचे नाव <span class="required">*</span></label>
+<input type="text" name="school" placeholder="उदा: बीड उच्च माध्यमिक विद्यालय" required>
+</div>
+<div class="form-group">
+<label>स्पर्धेचे नाव <span class="required">*</span></label>
+<select id="competition" name="competition" required onchange="onCompetitionChange()">
+<option value="">स्पर्धा निवडा</option>
+<option value="dance">नृत्य स्पर्धा</option>
+<option value="singing">गीत गायन स्पर्धा</option>
+<option value="solo_drama">एकपात्री अभिनय</option>
+<option value="painting">चित्रकला</option>
+<option value="rangoli">रांगोळी</option>
+</select>
+</div>
+<div class="form-group conditional" id="danceTypeDiv">
+<label>नृत्य स्पर्धेचा प्रकार <span class="required">*</span></label>
+<select id="danceType" name="danceType" onchange="onDanceTypeChange()">
+<option value="">प्रकार निवडा</option>
+<option value="solo">सोलो नृत्य</option>
+<option value="group">ग्रुप नृत्य</option>
+<option value="shishu_group">शिशु गट ग्रुप नृत्य</option>
+<option value="duet">जोडीनृत्य</option>
+<option value="family">कुटुंब नृत्य</option>
+</select>
+</div>
+<div class="form-group conditional" id="singingTypeDiv">
+<label>गीत गायन प्रकार <span class="required">*</span></label>
+<select id="singingType" name="singingType" onchange="showAgeGroup()">
+<option value="">प्रकार निवडा</option>
+<option value="solo">सोलो गायन</option>
+<option value="group">ग्रुप गायन</option>
+</select>
+</div>
+<div class="form-group conditional" id="ageGroupDiv">
+<label>वयोगट <span class="required">*</span></label>
+<select id="ageGroup" name="ageGroup">
+<option value="">वयोगट निवडा</option>
+<option value="shishu">शिशु गट (बालवर्ग / नर्सरी / LKG / UKG)</option>
+<option value="1-3">इ.१ली ते ३री</option>
+<option value="4-6">इ.४थी ते ६वी</option>
+<option value="7-10">इ.७वी ते १०वी</option>
+</select>
+</div>
+<div class="form-group">
+<label>स्पर्धकाचे नाव <span class="required">*</span></label>
+<input type="text" name="name" placeholder="उदा: राहुल देशमुख" required>
+<div class="note">
+जोडी / ग्रुप / कुटुंब असल्यास सर्व नावे लिहा (उदा: राहुल देशमुख + प्रिया पाटील)
+</div>
+</div>
+<div class="form-group">
+<label>मोबाईल क्रमांक <span class="required">*</span></label>
+<input type="tel" name="phone" maxlength="10" pattern="[0-9]{10}" placeholder="उदा: 9876543210" required>
+</div>
+<button type="submit">नोंदणी सबमिट करा</button>
+</form>
+</div>
+</div>
+<script>
+function hideAll() {
+document.getElementById('danceTypeDiv').classList.remove('show');
+document.getElementById('singingTypeDiv').classList.remove('show');
+document.getElementById('ageGroupDiv').classList.remove('show');
+}
+function onCompetitionChange() {
+hideAll();
+const c = document.getElementById('competition').value;
+if (c === 'dance') document.getElementById('danceTypeDiv').classList.add('show');
+if (c === 'singing') document.getElementById('singingTypeDiv').classList.add('show');
+if (c === 'solo_drama' || c === 'painting' || c === 'rangoli') document.getElementById('ageGroupDiv').classList.add('show');
+}
+function onDanceTypeChange() {
+const d = document.getElementById('danceType').value;
+const ageDiv = document.getElementById('ageGroupDiv');
+const age = document.getElementById('ageGroup');
+ageDiv.classList.add('show');
+[...age.options].forEach(o => o.disabled = false);
+if (d === 'shishu_group') {
+[...age.options].forEach(o => {
+if (o.value !== 'shishu' && o.value !== '') o.disabled = true;
+});
+age.value = 'shishu';
+} else {
+[...age.options].forEach(o => {
+if (o.value === 'shishu') o.disabled = true;
+});
+if (d !== 'solo' && d !== 'group') age.value = '';
+}
+}
+function showAgeGroup() {
+document.getElementById('ageGroupDiv').classList.add('show');
+}
+document.getElementById('registrationForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const formData = new FormData(this);
+  const data = Object.fromEntries(formData);
+  
+  fetch('तुमची_नवी_Web_App_URL_येथे_paste_करा', {  // Deploy नंतर copy करा
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {'Content-Type': 'application/json'}
+  })
+  .then(response => response.json())
+  .then(result => {
+    if(result.result === 'success') {
+      alert('✅ यशस्वी नोंदणी! Sheet मध्ये सेव झाले.');
+      this.reset();
+      hideAll();
+    } else {
+      alert('❌ त्रुटी: ' + result.message);
+    }
+  })
+  .catch(error => alert('❌ नेटवर्क त्रुटी - पुन्हा ट्राय करा'));
+});
+</script>
+</body>
+</html>
