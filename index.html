@@ -258,28 +258,35 @@ if (d !== 'solo' && d !== 'group') age.value = '';
 function showAgeGroup() {
 document.getElementById('ageGroupDiv').classList.add('show');
 }
-document.getElementById('registrationForm').addEventListener('submit', function(e) {
+// CORS Bypass + Error Handling
+document.getElementById('registrationForm').addEventListener('submit', async function(e) {
   e.preventDefault();
+  
   const formData = new FormData(this);
   const data = Object.fromEntries(formData);
   
-  fetch('तुमची_नवी_Web_App_URL_येथे_paste_करा', {  // Deploy नंतर copy करा
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers: {'Content-Type': 'application/json'}
-  })
-  .then(response => response.json())
-  .then(result => {
-    if(result.result === 'success') {
-      alert('✅ यशस्वी नोंदणी! Sheet मध्ये सेव झाले.');
+  // 👇 GitHub Pages / Live URL साठी
+  const url = 'https://script.google.com/macros/s/AKfycbxGZC1WBZM-2XuCgYPkNSgvCrq82MSj9nSb2Owu74ut9ritAb1tCPAhZlPtWAsAVmHa/exec';
+  
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      mode: 'cors',  // Live URL साठी
+      body: new URLSearchParams(data),  // Form data format
+      cache: 'no-cache'
+    });
+    
+    if (response.ok) {
+      alert('✅ यशस्वी! Sheet मध्ये data सेव झाले.');
       this.reset();
       hideAll();
-    } else {
-      alert('❌ त्रुटी: ' + result.message);
     }
-  })
-  .catch(error => alert('❌ नेटवर्क त्रुटी - पुन्हा ट्राय करा'));
+  } catch(error) {
+    alert('❌ त्रुटी. GitHub Pages वर deploy करा.');
+  }
 });
+
 </script>
 </body>
 </html>
+
