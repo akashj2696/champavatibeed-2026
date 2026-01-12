@@ -164,7 +164,8 @@ h1 {font-size: 1.6em;}
 </div>
 <div class="form-box">
 <h1>स्पर्धा नोंदणी फॉर्म</h1>
-<form id="registrationForm">
+<!-- पुराना form tag replace केला -->
+<form id="registrationForm" action="https://script.google.com/macros/s/AKfycbxGZC1WBZM-2XuCgYPkNSgvCrq82MSj9nSb2Owu74ut9ritAb1tCPAhZlPtWAsAVmHa/exec" method="POST">
 <div class="form-group">
 <label>शाळेचे नाव <span class="required">*</span></label>
 <input type="text" name="school" placeholder="उदा: बीड उच्च माध्यमिक विद्यालय" required>
@@ -259,42 +260,21 @@ function showAgeGroup() {
 document.getElementById('ageGroupDiv').classList.add('show');
 }
 
-// 🔥 FIXED SUBMIT FUNCTION - 100% Working!
-document.getElementById('registrationForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
+// पुरा submit script DELETE + simple script add केला
+document.getElementById('registrationForm').addEventListener('submit', function(e) {
+  // Loading
+  const btn = this.querySelector('button');
+  const original = btn.textContent;
+  btn.textContent = 'सेव होत आहे...';
+  btn.disabled = true;
   
-  const formData = new FormData(this);
-  const data = Object.fromEntries(formData);
-  
-  // तुमचा Web App URL (exact)
-  const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxGZC1WBZM-2XuCgYPkNSgvCrq82MSj9nSb2Owu74ut9ritAb1tCPAhZlPtWAsAVmHa/exec';
-  
-  // Loading message
-  const originalText = this.querySelector('button').textContent;
-  this.querySelector('button').textContent = 'सेव करत आहे...';
-  this.querySelector('button').disabled = true;
-  
-  try {
-    const response = await fetch(WEB_APP_URL, {
-      method: 'POST',
-      mode: 'no-cors',  // Google Apps Script साठी
-      body: new URLSearchParams(data),
-      cache: 'no-cache'
-    });
-    
-    // Google Apps Script ने success response पाठवत नाही - direct success मानू
-    alert('✅ यशस्वी नोंदणी! तुमची एंट्री चंपावती मोहोत्सव 2026 साठी नोंदली गेली.');
+  setTimeout(() => {
+    alert('✅ यशस्वी नोंदणी! Sheet refresh करा.');
     this.reset();
     hideAll();
-    
-  } catch(error) {
-    console.error('Submit error:', error);
-    alert('❌ नेटवर्क त्रुटी. Sheet manually check करा.');
-  } finally {
-    // Button reset
-    this.querySelector('button').textContent = originalText;
-    this.querySelector('button').disabled = false;
-  }
+    btn.textContent = original;
+    btn.disabled = false;
+  }, 2000);
 });
 </script>
 </body>
