@@ -164,7 +164,6 @@ h1 {font-size: 1.6em;}
 </div>
 <div class="form-box">
 <h1>स्पर्धा नोंदणी फॉर्म</h1>
-<!-- पुराना form tag replace केला -->
 <form id="registrationForm" action="https://script.google.com/macros/s/AKfycbxGZC1WBZM-2XuCgYPkNSgvCrq82MSj9nSb2Owu74ut9ritAb1tCPAhZlPtWAsAVmHa/exec" method="POST">
 <div class="form-group">
 <label>शाळेचे नाव <span class="required">*</span></label>
@@ -225,12 +224,14 @@ h1 {font-size: 1.6em;}
 </form>
 </div>
 </div>
+
 <script>
 function hideAll() {
 document.getElementById('danceTypeDiv').classList.remove('show');
 document.getElementById('singingTypeDiv').classList.remove('show');
 document.getElementById('ageGroupDiv').classList.remove('show');
 }
+
 function onCompetitionChange() {
 hideAll();
 const c = document.getElementById('competition').value;
@@ -238,6 +239,7 @@ if (c === 'dance') document.getElementById('danceTypeDiv').classList.add('show')
 if (c === 'singing') document.getElementById('singingTypeDiv').classList.add('show');
 if (c === 'solo_drama' || c === 'painting' || c === 'rangoli') document.getElementById('ageGroupDiv').classList.add('show');
 }
+
 function onDanceTypeChange() {
 const d = document.getElementById('danceType').value;
 const ageDiv = document.getElementById('ageGroupDiv');
@@ -256,25 +258,23 @@ if (o.value === 'shishu') o.disabled = true;
 if (d !== 'solo' && d !== 'group') age.value = '';
 }
 }
+
 function showAgeGroup() {
 document.getElementById('ageGroupDiv').classList.add('show');
 }
 
-// पुरा submit script DELETE + simple script add केला
+// 🔥 PERFECT SUBMIT SCRIPT - Natural form submission + Loading
 document.getElementById('registrationForm').addEventListener('submit', function(e) {
-  // Loading
   const btn = this.querySelector('button');
-  const original = btn.textContent;
-  btn.textContent = 'सेव होत आहे...';
-  btn.disabled = true;
+  const originalText = btn.textContent;
   
-  setTimeout(() => {
-    alert('✅ यशस्वी नोंदणी! Sheet refresh करा.');
-    this.reset();
-    hideAll();
-    btn.textContent = original;
-    btn.disabled = false;
-  }, 2000);
+  // Loading state - button disable + loading text
+  btn.textContent = '📤 सेव होत आहे...';
+  btn.disabled = true;
+  btn.style.opacity = '0.7';
+  
+  // Form natural submit होईल (action URL वर जाईल) - prevent करू नका!
+  // Google Apps Script automatically handle करेल
 });
 </script>
 </body>
